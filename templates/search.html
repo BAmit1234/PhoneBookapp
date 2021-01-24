@@ -1,0 +1,32 @@
+<html>
+<head>
+</head>
+<body>
+<form method='POST' action="" >
+<div >Search by name or email or both</div>
+
+Name   <input type="text" name="name" />
+
+Email  <input type="email" name="email" />
+<input type="Submit">
+
+</form>
+
+
+<button  type="button" class="btn"><a href="/">HOME</a></button>
+
+<table border =1>
+<th>NAME</th>
+<th>NUMBER</th>
+<th>EMAIL</th>
+{% for data in r %}
+<tr>
+
+<td>{{data[0]}}</td>
+<td>{{data[1]}}</td>
+<td> {{data[2]}}</a></td>
+</tr>
+{% endfor %}
+</table>
+</body>
+</html>

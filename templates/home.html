@@ -1,0 +1,47 @@
+<script>
+var i=1;
+var x={{results}};
+function decrementCount() {
+        i=i-1;
+		if(i<1){
+		i=1;
+		}
+        document.getElementById('inc').innerHTML = i;
+}
+function incrementCount() {
+         
+        if(i<=(x/10)&&x%10!=0){
+          i=i+1;
+		  }
+		
+        document.getElementById('inc').innerHTML = i;
+}
+
+</script>
+<div>PhoneBook</div>
+<div><button  type="button" class="btn"><a href="/search">Search</a></button></div>
+<table border =1>
+<th>NAME</th>
+<th>NUMBER</th>
+<th>EMAIL</th>
+{% for data in result1 %}
+<tr>
+
+<td>{{data[0]}}</td>
+<td>{{data[1]}}</td>
+<td> {{data[2]}}</a></td>
+<td><button  type="button" class="btn"><a href="/update/{{data[3]}}">Update</a></button></td>
+<td><button  type="button" class="btn"><a href="/delete/{{data[3]}}">Delete</a></button></td>
+</tr>
+{% endfor %}
+</table>
+<button  type="button" class="btn"><a href="/Add">Add</a></button>
+
+<br>
+<button type="button"  onclick="decrementCount()">Back</button>
+    
+<span id ="inc">1<span>
+
+<button type="button"  onclick="incrementCount()">Next</button>
+
+
